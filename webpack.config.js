@@ -6,7 +6,7 @@ module.exports = {
     mode: 'development',
 
     entry: [
-        './src/app.js'
+        './src/js/index.js'
     ],
     devServer: {
         hot: true,
@@ -32,7 +32,16 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: 'babel-loader'
-            }
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {},
+                    },
+                ],
+            },
         ]
     },
     plugins: [
